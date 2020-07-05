@@ -1,0 +1,19 @@
+.containerHome{
+    position: relative;
+}
+.containerHome img{
+    width: 100%;
+    height: 100vh;
+}
+
+.containerHome header{
+    position: absolute;
+    top:0px;
+    width: 100%;
+    height: 80px;
+}
+
+.containerHome header img{
+    width: 250px;
+    height: 150px;
+}

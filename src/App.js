@@ -1,9 +1,10 @@
 import React from 'react';
 import './global.css'
+import Router from './routes'
 
 function App () {
   return (
-    <p>eae</p>
+    <Router />
   );
 }
 
