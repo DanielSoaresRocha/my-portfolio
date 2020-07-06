@@ -1,10 +1,13 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom'
 import './styles.css'
 
 import { BsDownload } from "react-icons/bs";
 
 import fundo from '../../assets/images/fundo.jpg'
 import myImage from '../../assets/images/eu.jpg'
+import curriculo from '../../assets/files/daniel_rocha.pdf';
 
 function Home () {
     return (
@@ -36,8 +39,9 @@ function Home () {
                     </p>
 
                     <div className='donwloadCV'>
-                        <button>Meu currículo</button>
+                        <a className='donwloadCV' href={curriculo} download="DanielSoares.pdf">Meu currículo
                         <BsDownload color={"white"} size={17} />
+                        </a>
                     </div>
                 </div>
                 <img src={myImage} alt='Minha imagem' />
