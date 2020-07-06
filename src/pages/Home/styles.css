@@ -104,7 +104,7 @@
     font-size: 20px;
 }
 
-.containerHome .history .text .donwloadCV{
+.containerHome .history .text a{
     display: flex;
     flex-direction: row;
     margin-top: 40px;
@@ -117,19 +117,22 @@
     padding-bottom: 10px;
     background-color: rgba(0, 162, 255, 0.582);
     justify-content: center;
-    
-}
-
-.containerHome .history .text .donwloadCV a{
     font-size: 20px;
     color: white;
-    background-color: transparent;
+    background-color: rgba(0, 162, 255, 0.582);
     cursor: pointer;
     margin-right: 15px;
-    
+    text-decoration: none;
 }
 
-.containerHome .history .donwloadCV:hover{
+.containerHome .history a .spacing{
+    margin-left: 10px;
+    color: white;
+    width: 17px;
+    height: 17px;
+}
+
+.containerHome .history a:hover{
     background-color: blue;
 }
 
