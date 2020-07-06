@@ -1,19 +1,85 @@
 .containerHome{
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 .containerHome img{
     width: 100%;
     height: 100vh;
+    position: absolute;
 }
 
 .containerHome header{
-    position: absolute;
-    top:0px;
     width: 100%;
-    height: 80px;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    background-color: rgba(71, 71, 71, 0.41);
+    /*background-color: rgba(71, 71, 71, 0.41);*/
 }
 
-.containerHome header img{
-    width: 250px;
-    height: 150px;
+.containerHome header .logo{
+    width: 300px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.containerHome header .menu{
+    display: flex;
+    flex-direction: row;
+    margin-right: 50px;
+}
+
+.containerHome header .menu p{
+    margin-right: 40px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.containerHome .presentation{
+    position: absolute;
+    top:15vh;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: rgba(71, 71, 71, 0.41);
+    height: 85vh;
+}
+
+.containerHome .presentation h1{
+    margin-top: 150px;
+    font-size: 80px;
+    letter-spacing: 3px;
+}
+
+.containerHome .presentation p{
+    font-size: 25px;
+    margin-top: 10px;
+
+}
+
+.containerHome .presentation hr{
+    background-color: white;
+    height: 2px;
+    width: 50%;
+    margin-top: 10px;
+}
+
+.containerHome .presentation button{
+    background-color: rgb(230, 38, 38);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
