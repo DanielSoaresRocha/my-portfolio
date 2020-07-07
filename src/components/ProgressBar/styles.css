@@ -24,11 +24,11 @@
 
 .progressBar .progress{
     height: 100%;
-    width: 20px;
     background:linear-gradient(to right,blue, red, white);
     transition: 1s;
     animation: animate 2s linear infinite;
     border-radius: 8px;
+    width: 20px;
 }
 
 @keyframes animate{

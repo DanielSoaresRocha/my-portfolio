@@ -60,7 +60,7 @@ function Home () {
             </div>
 
             <div className='skills'>
-                <h1>Habilidades</h1>
+                <h1>O que eu sei fazer</h1>
                 <ProgresBar />
             </div>
         </div>

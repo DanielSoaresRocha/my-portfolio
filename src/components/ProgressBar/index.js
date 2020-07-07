@@ -22,15 +22,18 @@ function ProgressBar () {
         const target = document.querySelectorAll('[data-anime]')
 
         function animeScroll () {
+            const randon = (min, max) => Math.floor(Math.random() * (max - min) + min)
             const windowTop = window.pageYOffset + (window.innerHeight * 3 / 4)
 
-            target.forEach((element) => {
-                if (windowTop > element.offsetTop) {
-                    element.style.width = '200px'
-                } else {
-                    element.style.width = '0px'
-                }
-            })
+            if (windowTop > target[0].offsetTop) {
+                target[0].style.width = '250px'
+                target[1].style.width = '90px'
+                target[2].style.width = '200px'
+                target[3].style.width = '150px'
+
+            } else {
+                target.forEach(element => element.style.width = '0px')
+            }
         }
 
         window.addEventListener('scroll', debounce(() => {
@@ -40,12 +43,24 @@ function ProgressBar () {
     }, [])
 
     return (
-        <div className='progressBar'>
-            <p>Front-end</p>
-            <div data-anime='progress' className='progress'>
-
+        <>
+            <div className='progressBar'>
+                <p>Front-end</p>
+                <div data-anime='frontend' className='progress' />
             </div>
-        </div>
+            <div className='progressBar'>
+                <p>HTML</p>
+                <div data-anime='backend' className='progress' />
+            </div>
+            <div className='progressBar'>
+                <p>CSS</p>
+                <div data-anime='backend' className='progress' />
+            </div>
+            <div className='progressBar'>
+                <p>Javascript</p>
+                <div data-anime='backend' className='progress' />
+            </div>
+        </>
     );
 }
 
