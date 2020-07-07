@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import './styles.css'
 
 import { BsDownload } from "react-icons/bs";
+import ProgresBar from '../../components/ProgressBar'
 
 import fundo from '../../assets/images/fundo.jpg'
 import myImage from '../../assets/images/eu.jpg'
@@ -10,44 +11,6 @@ import curriculo from '../../assets/files/daniel_rocha.pdf';
 
 
 function Home () {
-
-    function debounce (func, wait, immediate) {
-        var timeout;
-        return function () {
-            var context = this, args = arguments;
-            var later = function () {
-                timeout = null;
-                if (!immediate) func.apply(context, args);
-            };
-            var callNow = immediate && !timeout;
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-            if (callNow) func.apply(context, args);
-        };
-    };
-
-    useEffect(() => {
-        const target = document.querySelectorAll('[data-anime]')
-
-        function animeScroll () {
-            const windowTop = window.pageYOffset + (window.innerHeight * 3 / 4)
-
-            target.forEach((element) => {
-                if (windowTop > element.offsetTop) {
-                    element.style.width = '200px'
-                    console.log("colocou")
-                } else {
-                    element.style.width = '0px'
-                    console.log("tirou")
-                }
-            })
-        }
-
-        window.addEventListener('scroll', debounce(() => {
-            animeScroll();
-        }, 200))
-
-    }, [])
 
     return (
         <div className='containerHome'>
@@ -98,11 +61,7 @@ function Home () {
 
             <div className='skills'>
                 <h1>Habilidades</h1>
-                <div className='progressBar'>
-                    <div data-anime='progress' className='progress'>
-
-                    </div>
-                </div>
+                <ProgresBar />
             </div>
         </div>
     );
