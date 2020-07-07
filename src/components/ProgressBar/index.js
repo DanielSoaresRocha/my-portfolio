@@ -41,6 +41,7 @@ function ProgressBar () {
 
     return (
         <div className='progressBar'>
+            <p>Front-end</p>
             <div data-anime='progress' className='progress'>
 
             </div>

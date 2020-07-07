@@ -1,10 +1,25 @@
 .progressBar{
-    height: 80px;
+    height: 50px;
     width: 300px;
-    background-color: wheat;
+    background-color: transparent;
     padding: 3px;
     margin-top: 20px;
     margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+.progressBar p{
+    z-index: 20;
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    margin: auto;
+    margin-top: 5px;
+    margin-left: 10px;
 }
 
 .progressBar .progress{
@@ -12,4 +27,14 @@
     width: 20px;
     background:linear-gradient(to right,blue, red, white);
     transition: 1s;
+    animation: animate 2s linear infinite;
+    border-radius: 8px;
+}
+
+@keyframes animate{
+    0%{
+        filter: hue-rotate(0deg);
+    }100%{
+        filter: hue-rotate(360deg);
+    }
 }
