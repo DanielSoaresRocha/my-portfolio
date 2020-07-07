@@ -22,7 +22,6 @@ function ProgressBar () {
         const target = document.querySelectorAll('[data-anime]')
 
         function animeScroll () {
-            const randon = (min, max) => Math.floor(Math.random() * (max - min) + min)
             const windowTop = window.pageYOffset + (window.innerHeight * 3 / 4)
 
             if (windowTop > target[0].offsetTop) {
@@ -30,7 +29,6 @@ function ProgressBar () {
                 target[1].style.width = '90px'
                 target[2].style.width = '200px'
                 target[3].style.width = '150px'
-
             } else {
                 target.forEach(element => element.style.width = '0px')
             }

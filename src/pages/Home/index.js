@@ -20,9 +20,9 @@ function Home () {
                     <h1>Daniel Rocha</h1>
                 </div>
                 <div className='menu'>
-                    <p>História</p>
-                    <p>Habilidades</p>
-                    <p>Projetos</p>
+                    <a href='#history'>História</a>
+                    <a href='#skills'>Habilidades</a>
+                    <a href='#history'>Projetos</a>
                 </div>
             </header>
 
@@ -60,7 +60,7 @@ function Home () {
             </div>
 
             <div className='skills'>
-                <h1>O que eu sei fazer</h1>
+                <h1 id='skills'>O que eu sei fazer</h1>
                 <ProgresBar />
             </div>
         </div>
