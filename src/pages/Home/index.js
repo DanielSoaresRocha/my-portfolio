@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import './styles.css'
 
@@ -11,6 +11,44 @@ import curriculo from '../../assets/files/daniel_rocha.pdf';
 
 
 function Home () {
+    const porcentagens = [160, 100, 200, 250, 210, 235, 210, 210, 135, 100]
+
+    function debounce (func, wait, immediate) {
+        var timeout;
+        return function () {
+            var context = this, args = arguments;
+            var later = function () {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    };
+
+    useEffect(() => {
+        const target = document.querySelectorAll('[data-anime]')
+
+        function animeScroll () {
+            const windowTop = window.pageYOffset + (window.innerHeight * 3 / 4)
+
+            if (windowTop > target[0].offsetTop) {
+                for (let i = 0; i < target.length; i++) {
+                    target[i].style.width = `${porcentagens[i]}px`
+                }
+            } else {
+                console.log('voltou')
+                target.forEach(element => element.style.width = '0px')
+            }
+        }
+
+        window.addEventListener('scroll', debounce(() => {
+            animeScroll();
+        }, 200))
+
+    }, [porcentagens])
 
     return (
         <div className='containerHome'>
@@ -60,8 +98,30 @@ function Home () {
             </div>
 
             <div className='skills'>
-                <h1 id='skills'>O que eu sei fazer</h1>
-                <ProgresBar />
+                <div className='escurecer'>
+                    <h1 id='skills'>O que eu sei fazer</h1>
+                    <ul>
+                        <li>
+                            <h2>Skills Principais</h2>
+                            <ProgresBar skill='JavaScript' width='160' />
+                            <ProgresBar skill='HTML' width='100' />
+                            <ProgresBar skill='CSS' width='200' />
+                            <ProgresBar skill='JAVA' width='250' />
+                        </li>
+                        <li>
+                            <h2>Desenvolvimento</h2>
+                            <ProgresBar skill='Front-End' width='210' />
+                            <ProgresBar skill='Mobile' width='235' />
+                            <ProgresBar skill='Backend' width='110' />
+                        </li>
+                        <li>
+                            <h2>Outros</h2>
+                            <ProgresBar skill='Firebase' width='210' />
+                            <ProgresBar skill='Eletrônica' width='135' />
+                            <ProgresBar skill='Backend' width='100' />
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     );
