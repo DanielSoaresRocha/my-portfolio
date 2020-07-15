@@ -164,7 +164,7 @@
 
 .containerHome .skills h1{
     padding: 20px;
-    color: white;
+    color: red;
 }
 
 .containerHome .skills ul{
@@ -177,6 +177,62 @@
 }
 
 .containerHome .skills ul h2{
-    color: blue;
+    color: red;
     font-size: 25px;
+}
+
+/*------------------ PROJECTS --------------------*/
+
+.containerHome .projects{
+    background-color: #433736;
+    padding: 20px;
+}
+
+.containerHome .projects h1{
+    grid-column: 1/4;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.containerHome .projects .groupButtons{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.containerHome .projects button{
+    color: rgb(230, 38, 38);
+    width: 300px;
+    height: 60px;
+    font-size: 25px;
+    background-color: transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 3px solid rgb(230, 38, 38);
+    outline: none;
+    justify-self: center;
+}
+
+.containerHome .projects button.active{
+    background-color: rgb(230, 38, 38);
+    color: white;
+}
+
+.containerHome .projects ul{
+    list-style: none;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 30px;
+    text-align: center;
+    row-gap: 20px;
+}
+
+.containerHome .projects ul li img{
+    width: 350px;
+    height: 200px;
+
 }

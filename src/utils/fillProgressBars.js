@@ -1,4 +1,4 @@
-const porcentagens = [160, 100, 200, 250, 210, 235, 210, 210, 135, 100]
+const porcentagens = [160, 100, 200, 250, 210, 235, 120, 210, 135, 100]
 
 function debounce (func, wait, immediate) {
     var timeout;

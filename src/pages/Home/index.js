@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './styles.css'
 
@@ -12,9 +12,28 @@ import curriculo from '../../assets/files/daniel_rocha.pdf';
 
 
 function Home () {
+    const [projects, setProjects] = useState([])
+
     useEffect(() => {
         fillProgressBars()
-    })
+        setProjects([
+            {
+                id: 0,
+                nome: 'nome0',
+                img: myImage
+            },
+            {
+                id: 1,
+                nome: 'nome1',
+                img: myImage
+            },
+            {
+                id: 2,
+                nome: 'nome2',
+                img: myImage
+            }
+        ])
+    }, [])
 
     return (
         <div className='containerHome'>
@@ -88,6 +107,23 @@ function Home () {
                         </li>
                     </ul>
                 </div>
+            </div>
+
+            <div className='projects'>
+                <h1>Meus projetos</h1>
+                <div className='groupButtons'>
+                    <button className='active'>Web</button>
+                    <button>Mobile</button>
+                    <button>Desktop</button>
+                </div>
+
+                <ul>
+                    {projects.map(project => (
+                        <li key={project.id}>
+                            <img src={project.img} alt='project' />
+                        </li>
+                    ))}
+                </ul>
             </div>
         </div>
     );
