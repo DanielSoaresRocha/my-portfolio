@@ -35,6 +35,31 @@ function Home () {
         ])
     }, [])
 
+    function handleClick (e) {
+        const getId = e.target.id
+
+        document.querySelector('button.active').classList.remove('active')
+        document.getElementById(getId).classList.add('active')
+
+        if (getId === 'web') {
+            setProjects(projects.map(project => {
+                project.img = myImage
+                return project
+            }))
+        } else if (getId === 'mobile') {
+            setProjects(projects.map(project => {
+                project.img = fundo
+                return project
+            }))
+        } else {
+            setProjects(projects.map(project => {
+                project.img = myImage
+                return project
+            }))
+        }
+
+    }
+
     return (
         <div className='containerHome'>
             <img src={fundo} alt='background' />
@@ -112,9 +137,9 @@ function Home () {
             <div className='projects'>
                 <h1>Meus projetos</h1>
                 <div className='groupButtons'>
-                    <button className='active'>Web</button>
-                    <button>Mobile</button>
-                    <button>Desktop</button>
+                    <button id='web' onClick={handleClick} className='active'>Web</button>
+                    <button id='mobile' onClick={handleClick}>Mobile</button>
+                    <button id='othes' onClick={handleClick}>Desktop</button>
                 </div>
 
                 <ul>
