@@ -4,6 +4,7 @@ import './styles.css'
 
 import { BsDownload } from "react-icons/bs";
 import ProgresBar from '../../components/ProgressBar'
+import fillProgressBars from '../../utils/fillProgressBars'
 
 import fundo from '../../assets/images/fundo.jpg'
 import myImage from '../../assets/images/eu.jpg'
@@ -11,44 +12,9 @@ import curriculo from '../../assets/files/daniel_rocha.pdf';
 
 
 function Home () {
-    const porcentagens = [160, 100, 200, 250, 210, 235, 210, 210, 135, 100]
-
-    function debounce (func, wait, immediate) {
-        var timeout;
-        return function () {
-            var context = this, args = arguments;
-            var later = function () {
-                timeout = null;
-                if (!immediate) func.apply(context, args);
-            };
-            var callNow = immediate && !timeout;
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-            if (callNow) func.apply(context, args);
-        };
-    };
-
     useEffect(() => {
-        const target = document.querySelectorAll('[data-anime]')
-
-        function animeScroll () {
-            const windowTop = window.pageYOffset + (window.innerHeight * 3 / 4)
-
-            if (windowTop > target[0].offsetTop) {
-                for (let i = 0; i < target.length; i++) {
-                    target[i].style.width = `${porcentagens[i]}px`
-                }
-            } else {
-                console.log('voltou')
-                target.forEach(element => element.style.width = '0px')
-            }
-        }
-
-        window.addEventListener('scroll', debounce(() => {
-            animeScroll();
-        }, 200))
-
-    }, [porcentagens])
+        fillProgressBars()
+    })
 
     return (
         <div className='containerHome'>
@@ -106,7 +72,7 @@ function Home () {
                             <ProgresBar skill='JavaScript' width='160' />
                             <ProgresBar skill='HTML' width='100' />
                             <ProgresBar skill='CSS' width='200' />
-                            <ProgresBar skill='JAVA' width='250' />
+                            <ProgresBar skill='Java' width='250' />
                         </li>
                         <li>
                             <h2>Desenvolvimento</h2>
