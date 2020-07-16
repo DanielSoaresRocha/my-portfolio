@@ -119,7 +119,6 @@
     padding: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: rgba(0, 162, 255, 0.582);
     justify-content: center;
     font-size: 20px;
     color: white;
@@ -217,8 +216,17 @@
 }
 
 .containerHome .projects button.active{
-    background-color: rgb(230, 38, 38);
+    background-color: red;
     color: white;
+    animation: flashButton 1s ease;
+}
+
+@keyframes flashButton{
+    0%{
+       background-color: rgb(64, 185, 27); 
+    }100%{
+       background-color: #433736;
+    }
 }
 
 .containerHome .projects ul{

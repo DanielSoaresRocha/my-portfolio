@@ -74,7 +74,7 @@ function Home () {
                 <div className='menu'>
                     <a href='#history'>História</a>
                     <a href='#skills'>Habilidades</a>
-                    <a href='#history'>Projetos</a>
+                    <a href='#projects'>Projetos</a>
                 </div>
             </header>
 
@@ -139,7 +139,7 @@ function Home () {
             </div>
 
             <div className='projects'>
-                <h1>Meus projetos</h1>
+                <h1 id='projects'>Meus projetos</h1>
                 <div className='groupButtons'>
                     <button id='web' onClick={handleClick} className='active'>Web</button>
                     <button id='mobile' onClick={handleClick}>Mobile</button>
