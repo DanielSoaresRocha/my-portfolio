@@ -231,8 +231,23 @@
     row-gap: 20px;
 }
 
+.animate{
+    transition: 2s;
+    animation: surge 2s ease;
+}
+
+@keyframes surge{
+    0%{
+        opacity: 0;
+        transform: translateY(-40px);
+    }100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
 .containerHome .projects ul li img{
     width: 350px;
     height: 200px;
-
 }
+

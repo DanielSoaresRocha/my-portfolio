@@ -40,24 +40,28 @@ function Home () {
 
         document.querySelector('button.active').classList.remove('active')
         document.getElementById(getId).classList.add('active')
+        document.querySelectorAll('li.animation').forEach(element => element.classList.remove('animate'))
 
-        if (getId === 'web') {
-            setProjects(projects.map(project => {
-                project.img = myImage
-                return project
-            }))
-        } else if (getId === 'mobile') {
-            setProjects(projects.map(project => {
-                project.img = fundo
-                return project
-            }))
-        } else {
-            setProjects(projects.map(project => {
-                project.img = myImage
-                return project
-            }))
-        }
+        setTimeout(() => {
+            document.querySelectorAll('li.animation').forEach(element => element.classList.add('animate'))
 
+            if (getId === 'web') {
+                setProjects(projects.map(project => {
+                    project.img = myImage
+                    return project
+                }))
+            } else if (getId === 'mobile') {
+                setProjects(projects.map(project => {
+                    project.img = fundo
+                    return project
+                }))
+            } else {
+                setProjects(projects.map(project => {
+                    project.img = myImage
+                    return project
+                }))
+            }
+        }, 100);
     }
 
     return (
@@ -144,7 +148,7 @@ function Home () {
 
                 <ul>
                     {projects.map(project => (
-                        <li key={project.id}>
+                        <li className='animation' key={project.id}>
                             <img src={project.img} alt='project' />
                         </li>
                     ))}
