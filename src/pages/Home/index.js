@@ -150,6 +150,8 @@ function Home () {
                     {projects.map(project => (
                         <li className='animation' key={project.id}>
                             <img src={project.img} alt='project' />
+                            <img src={fundo} alt='fundo' />
+                            <p>{project.nome}</p>
                         </li>
                     ))}
                 </ul>
