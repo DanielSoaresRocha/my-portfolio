@@ -10,6 +10,10 @@ import fundo from '../../assets/images/fundo.jpg'
 import myImage from '../../assets/images/eu.jpg'
 import curriculo from '../../assets/files/daniel_rocha.pdf';
 
+//icons
+import instagran from '../../assets/icons/instagran.png'
+import github from '../../assets/icons/github.png'
+import linkedin from '../../assets/icons/linkedin.png'
 
 function Home () {
     const [projects, setProjects] = useState([])
@@ -156,7 +160,22 @@ function Home () {
                     ))}
                 </ul>
             </div>
+            <div className='contact'>
+                <h2>Minhas redes sociais</h2>
+                <div className='networks'>
+                    <a href='https://github.com/DanielSoaresRocha'>
+                        <img src={github} alt='github' />
+                    </a>
+                    <a href='https://www.linkedin.com/in/daniel-soares-rocha-1a71101a9/'>
+                        <img src={linkedin} alt='linkedin' />
+                    </a>
+                    <a href='https://www.instagram.com/dan_.rocha/'>
+                        <img src={instagran} alt='instagran' />
+                    </a>
+                </div>
+            </div>
         </div>
+
     );
 }
 
