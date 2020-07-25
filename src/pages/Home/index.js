@@ -14,6 +14,7 @@ import curriculo from '../../assets/files/daniel_rocha.pdf';
 import instagran from '../../assets/icons/instagran.png'
 import github from '../../assets/icons/github.png'
 import linkedin from '../../assets/icons/linkedin.png'
+import person from '../../assets/icons/person.png'
 
 function Home () {
     const [projects, setProjects] = useState([])
@@ -173,6 +174,13 @@ function Home () {
                         <img src={instagran} alt='instagran' />
                     </a>
                 </div>
+
+                <button>
+                    <span>Entre em contato!</span>
+                    <img src={person} alt='instagran' />
+                </button>
+
+                <p>Daniel Rocha - 2020</p>
             </div>
         </div>
 

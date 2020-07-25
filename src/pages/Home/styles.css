@@ -185,6 +185,7 @@
 .containerHome .projects{
     background-color: #433736;
     padding: 20px;
+    min-height: 800px;
 }
 
 .containerHome .projects h1{
@@ -300,12 +301,14 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    min-height: 400px;
+    position: relative;
 }
 
 .containerHome .contact h2{
     color: white;
     width: max-content;
-    margin: auto;
+    align-self: center;
     margin-top: 100px;
 }
 
@@ -320,10 +323,49 @@
 .contact a{
     font-size: 60px;
     background-color: transparent;
+    transition: transform 1s;
+}
+
+.contact a:hover{
+    transform: translateY(-10px);
 }
 
 .contact a img{
     width: 44px;
     height: 44px;
+}
+
+.contact button{
+    background-color: rgb(230, 38, 38);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    width: max-content;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    outline: none;
+}
+
+.contact button img{
+    height: 24px;
+    width: 24px;
+    margin-left: 10px;
+}
+
+.contact p{
+    align-self: center;
+    font-size: 20px;
+    color: white;
+    bottom: 10px;
+    position: absolute;
+    font-weight: bolder;
 }
 
